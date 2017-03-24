@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
      @first_last.each do |i|
        i.capitalize!
      end
-
+     
      @first_last.join(" ")
    end
 
