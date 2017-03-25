@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   post 'users/confirm' => 'users#confirm'
 
+  resources :sessions, only: [:new, :create, :destroy]
+
   resources :topics do
     resources :posts, except: [:index]
   end
