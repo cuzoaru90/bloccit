@@ -20,4 +20,8 @@ class UsersController < ApplicationController
      end
    end
 
+   def confirm
+     
+   end
+
 end
