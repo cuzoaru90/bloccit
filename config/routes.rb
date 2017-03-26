@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :labels, only: [:show]
+
   resources :users, only: [:new, :create]
 
   post 'users/confirm' => 'users#confirm'
