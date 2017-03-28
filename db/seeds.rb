@@ -52,11 +52,11 @@ require 'random_data'
    )
  end
 
- user = User.first
- user.update_attributes!(
-   email: 'cuzoaru90@gmail.com',
-   password: 'helloworld'
- )
+ # user = User.first
+ # user.update_attributes!(
+ #   email: 'cuzoaru90@gmail.com',
+ #   password: 'helloworld'
+ # )
 
   # Create an admin user
  admin = User.create!(
