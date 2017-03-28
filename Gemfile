@@ -24,6 +24,7 @@
  gem 'bootstrap-sass'
  # Use CoffeeScript for .coffee assets and views
  gem 'coffee-rails', '~> 4.1.0'
+ gem 'figaro', '1.0'
  gem 'jquery-rails'
  # Use SCSS for stylesheets
  gem 'sass-rails', '~> 5.0'
