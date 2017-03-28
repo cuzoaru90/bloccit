@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
      @post = @topic.posts.build(post_params)
      @post.user = current_user
+     @post.favorites.build(user: current_user)
      
      if @post.save
        @post.labels = Label.update_labels(params[:post][:labels])
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
        flash.now[:alert] = "There was an error saving the post. Please try again."
        render :new
      end
-     
+
    end
 
   def edit

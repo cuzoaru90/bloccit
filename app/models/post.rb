@@ -2,6 +2,8 @@ class Post < ActiveRecord::Base
   belongs_to :topic
   belongs_to :user
   after_create :create_vote
+  after_create :send_creator_email
+
 
   has_many :comments, dependent: :destroy
 
@@ -44,6 +46,10 @@ class Post < ActiveRecord::Base
 
    def create_vote
      user.votes.create(value: 1, post: self)
+   end
+
+   def send_creator_email
+     FavoriteMailer.new_post(user).deliver_now
    end
   
 end
