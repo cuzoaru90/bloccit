@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   before_save { self.email = email.downcase if email.present? }
   before_save { self.role ||= :member }
-  before_save { :capitalize if name.present?}
+  before_save { self.upcase if name.present?}
 
  
   validates :name, length: { minimum: 1, maximum: 100 }, presence: true
